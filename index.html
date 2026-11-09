@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Goa Stays – Hotels and hostels across India</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f1f7f6;--s:#fff;--ink:#0b2f3a;--mut:#58727a;--line:#d3e3e1;--lag:#0f8f8b;--sun:#ffbe32;--coral:#ff5c5c;--deep:#0b2f3a;--deepink:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#08181d;--s:#102329;--ink:#e6f2f1;--mut:#92abb0;--line:#223a41;--lag:#32c4bf;--deep:#06141a;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#08181d;--s:#102329;--ink:#e6f2f1;--mut:#92abb0;--line:#223a41;--lag:#32c4bf;--deep:#06141a;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque",Figtree,system-ui,sans-serif;line-height:1.1;margin:0}
+.wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+header.top{background:var(--deep);color:var(--deepink)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 0}
+.brand{font:800 22px "Bricolage Grotesque",sans-serif;color:inherit;text-decoration:none}.brand i{color:var(--sun);font-style:normal}
+.nav nav{display:flex;gap:4px;flex-wrap:wrap}
+.nav nav a{color:inherit;text-decoration:none;font-size:15px;padding:6px 12px;border-radius:99px;opacity:.85}
+.nav nav a[aria-current=page]{background:rgba(255,255,255,.16);opacity:1}
+.hero{position:relative;overflow:hidden;padding:30px 0 100px}
+.hero h1{font-size:clamp(38px,8vw,66px);font-weight:800;max-width:12ch;position:relative}
+.hero p{max-width:46ch;opacity:.84;margin:14px 0 22px;position:relative}
+.sun{position:absolute;right:-40px;top:20px;width:230px;height:230px;border-radius:50%;background:var(--sun)}
+.wave{position:absolute;left:0;right:0;bottom:-2px;width:100%;height:64px;fill:var(--bg)}
+.ph{padding:26px 0 34px}.ph h1{font-size:clamp(30px,6vw,46px);font-weight:800}.ph p{margin:8px 0 0;opacity:.82;max-width:52ch}
+.btn{font:600 15px Figtree,sans-serif;border:0;border-radius:10px;padding:12px 18px;cursor:pointer;background:var(--coral);color:#fff;text-decoration:none;display:inline-block;text-align:center}
+.btn.alt{background:transparent;color:inherit;border:1px solid currentColor}
+.btns{display:flex;gap:10px;flex-wrap:wrap;position:relative}
+main{padding-bottom:30px}
+h2.sec{font-size:26px;margin:34px 0 12px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.box{background:var(--s);border:1px solid var(--line);border-radius:14px;padding:16px}
+.box h3{font-size:18px;margin-bottom:6px}.box p{margin:0;color:var(--mut);font-size:15px}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:-52px;position:relative}
+.stat{background:var(--s);border-radius:14px;padding:14px 18px;flex:1;min-width:140px;box-shadow:0 10px 26px rgba(5,25,32,.18)}
+.stat b{display:block;font:800 30px "Bricolage Grotesque",sans-serif}.stat span{color:var(--mut);font-size:14px}
+.filters{background:var(--s);border-radius:16px;padding:16px;margin-top:-30px;position:relative;box-shadow:0 14px 34px rgba(5,25,32,.2)}
+.seg{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
+.seg button{border:1px solid var(--line);background:transparent;color:var(--ink);font:600 15px Figtree,sans-serif;border-radius:99px;padding:8px 18px;cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--ink);color:var(--s);border-color:var(--ink)}
+.fg{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+label{font-size:13px;font-weight:600;color:var(--mut);display:grid;gap:4px}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:11px;width:100%}
+input[type=range]{padding:0;accent-color:var(--lag)}
+:is(input,select,textarea,button,a):focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.bar{display:flex;justify-content:space-between;align-items:end;gap:10px;margin:26px 0 12px;flex-wrap:wrap}.bar h2{font-size:24px}.bar select{width:auto}
+.list{display:grid;gap:14px}
+.card{display:grid;grid-template-columns:140px 1fr auto;background:var(--s);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.pic{display:grid;place-items:center;position:relative;font:800 44px "Bricolage Grotesque",sans-serif;color:rgba(255,255,255,.93)}
+.pic b{position:absolute;left:10px;top:10px;font:600 12px Figtree,sans-serif;background:rgba(0,0,0,.35);border-radius:99px;padding:2px 10px}
+.info{padding:14px 16px}.info h3{font-size:20px}
+.meta{color:var(--mut);font-size:14px;margin:4px 0 8px}.rate{color:var(--lag);font-weight:600}
+.tags{display:flex;gap:6px;flex-wrap:wrap}.tags span{font-size:12px;border:1px solid var(--line);border-radius:99px;padding:2px 9px;color:var(--mut)}
+.buy{padding:14px 16px;text-align:right;display:flex;flex-direction:column;justify-content:space-between;gap:10px;border-left:1px dashed var(--line)}
+.price{font:800 24px "Bricolage Grotesque",sans-serif}.price small{display:block;font:400 12px Figtree,sans-serif;color:var(--mut)}
+.link{font-size:13px;color:var(--mut)}
+.empty{padding:28px;text-align:center;color:var(--mut);background:var(--s);border:1px dashed var(--line);border-radius:14px}
+.st{display:flex;flex-direction:column;gap:8px}.st h3{font-size:20px}.st .v{color:var(--lag);font-weight:600;font-size:14px}
+.st .d{color:var(--mut);font-size:14px;flex:1}
+.faq details{background:var(--s);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-bottom:8px}
+.faq summary{font-weight:600;cursor:pointer}.faq p{margin:8px 0 0;color:var(--mut)}
+.steps{counter-reset:s;display:grid;gap:10px;padding:0;list-style:none}
+.steps li{counter-increment:s;background:var(--s);border:1px solid var(--line);border-radius:12px;padding:14px 16px 14px 56px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:14px;top:12px;width:30px;height:30px;border-radius:50%;background:var(--sun);color:#2b1e00;display:grid;place-items:center;font-weight:800}
+.ov{position:fixed;inset:0;background:rgba(3,14,18,.62);display:none;align-items:flex-end;justify-content:center;z-index:30}.ov.on{display:flex}
+.sheet{background:var(--s);width:100%;max-width:480px;max-height:92%;overflow:auto;border-radius:18px 18px 0 0;padding:20px 20px calc(20px + env(safe-area-inset-bottom,0px));display:grid;gap:12px}
+.sum{background:var(--bg);border-radius:10px;padding:12px;font-size:15px}
+.row{display:flex;gap:8px}.row>*{flex:1}
+.ref{font:800 30px "Bricolage Grotesque",sans-serif;letter-spacing:.05em}
+footer{padding:22px 0 44px;color:var(--mut);font-size:13px;border-top:1px solid var(--line);margin-top:20px}
+footer a{color:inherit}
+@media (min-width:600px){.ov{align-items:center}.sheet{border-radius:18px}}
+@media (max-width:640px){.card{grid-template-columns:1fr}.pic{height:80px}.buy{border-left:0;border-top:1px dashed var(--line);flex-direction:row;align-items:center;text-align:left}.sun{width:140px;height:140px;top:60px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+<div class="nav"><a class="brand" href="#home">Goa<i>Stays</i></a>
+<nav id="nav"><a href="#home">Welcome</a><a href="#stays">Stays</a><a href="#places">Places</a><a href="#states">States</a><a href="#about">About us</a><a href="#support">Support</a></nav></div>
+<div id="hdr"></div></div></header>
+
+<main class="wrap">
+<section id="p-home" hidden>
+<div class="stats" id="stats"></div>
+<h2 class="sec">What you can do here</h2>
+<div class="grid">
+<div class="box"><h3>Compare hotels and hostels</h3><p>One list for resorts, city hotels and dorm beds, so families and backpackers both find a fit.</p></div>
+<div class="box"><h3>See prices in rupees</h3><p>Every price is shown in ₹, taken from public listings, with the date caveat made clear.</p></div>
+<div class="box"><h3>Send a booking request</h3><p>Choose your dates and travellers, and we get back to you to confirm availability and the final price.</p></div>
+<div class="box"><h3>Explore India by state</h3><p>Browse major tourist states and ask for a quote for the place you want to visit.</p></div>
+</div>
+<h2 class="sec">Plan smarter</h2>
+<div class="grid">
+<div class="box"><h3>Monsoon is cheapest</h3><p>From June to September, a good AC dorm bed in Goa can cost around ₹350 to ₹500 a night.</p></div>
+<div class="box"><h3>Avoid the New Year rush</h3><p>Between 20 December and 5 January, Goa rates often triple. Book 4 to 6 weeks ahead.</p></div>
+<div class="box"><h3>Pack for dorms</h3><p>Bring two sturdy padlocks for under-bed lockers and keep valuables with you.</p></div>
+</div>
+</section>
+
+<section id="p-stays" hidden>
+<div class="filters">
+<div class="seg" id="seg"><button aria-pressed="true" data-t="all">All stays</button><button aria-pressed="false" data-t="hotel">Hotels</button><button aria-pressed="false" data-t="hostel">Hostels</button></div>
+<div class="fg">
+<label>Destination<select id="area"><option value="">All of India</option></select></label>
+<label>Check-in<input type="date" id="cin"></label>
+<label>Nights<select id="nights"><option>1</option><option>2</option><option selected>3</option><option>5</option><option>7</option></select></label>
+<label>Travellers<select id="pax"><option>1</option><option selected>2</option><option>3</option><option>4</option></select></label>
+<label>Budget per night: <b id="maxv"></b><input type="range" id="max" min="500" max="25000" step="500" value="25000"></label>
+</div></div>
+<div class="bar"><h2 id="count"></h2><select id="sort" aria-label="Sort"><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="rate">Top rated</option></select></div>
+<div class="list" id="list"></div>
+<p class="link">Prices are indicative and come from public listings (Expedia India, Hostelz and travel guides). They change by date, and taxes may be extra. A date under a price shows when it was seen. “Ask for rate” means we have no verified price yet, so we quote it for you.</p>
+</section>
+
+<section id="p-places" hidden>
+<p class="link">Places travellers love across India. Ask us about stays, or open live prices on a partner site.</p>
+<div class="grid" id="pgrid" style="margin-top:14px"></div>
+</section>
+
+<section id="p-states" hidden>
+<p class="link">Visit numbers are domestic tourist visits for 2024 as reported from the India Tourism Data Compendium. Listings with ₹ prices are live for Goa today. For other states, send a quote request and we will come back with options.</p>
+<div class="grid" id="sgrid" style="margin-top:14px"></div>
+</section>
+
+<section id="p-about" hidden>
+<h2 class="sec">Who we are</h2>
+<p style="max-width:62ch">Goa Stays is an independent travel listing site for India. We put hotels and hostels side by side, show prices in rupees, and help you send a booking request in about a minute. We are not a hotel and we do not take payments on this site.</p>
+<h2 class="sec">What we provide</h2>
+<div class="grid">
+<div class="box"><h3>Hotels and hostels across India</h3><p>Hotels, hostels and pods in Goa, Mumbai, Delhi, Bengaluru, Jaipur, Kochi and more, with real names and ₹ prices where we have them.</p></div>
+<div class="box"><h3>State guides</h3><p>Sixteen major states and regions with their well-known destinations and tourist numbers.</p></div>
+<div class="box"><h3>Booking requests</h3><p>Send your dates and travellers. We confirm availability and the final price before you pay anything.</p></div>
+<div class="box"><h3>Travel tips</h3><p>Season and budget advice, such as when dorm beds are cheapest.</p></div>
+<div class="box"><h3>Support</h3><p>Answers to common questions and a form to reach us. See the Support page.</p></div>
+</div>
+<h2 class="sec">How a request works</h2>
+<ol class="steps"><li>Pick a stay, your check-in date, nights and travellers.</li><li>Send a request with your name, phone and email.</li><li>We check availability and reply with the final price. You pay only after you agree.</li></ol>
+<h2 class="sec">Where our data comes from</h2>
+<p style="max-width:62ch">Hotel prices and ratings come from public Expedia India listings. Hostel ranges come from travel guides and hostel comparison sites. Tourist numbers come from India’s tourism statistics. Rates move daily, so treat every price as a guide, not a quote.</p>
+</section>
+
+<section id="p-support" hidden>
+<div class="grid" style="margin-top:6px">
+<div class="box"><h3>Contact us</h3><p id="contact">Send a message with the form below and we will reply by email or phone.</p></div>
+<div class="box"><h3>Need to change a request?</h3><p>Reply to our confirmation message with your reference code, such as GS7K2P9A, and we will update it.</p></div>
+</div>
+<h2 class="sec">Common questions</h2>
+<div class="faq">
+<details><summary>How do I book a stay?</summary><p>Open Stays, tap Request booking on any hotel or hostel, and send your details. We confirm availability and the final price with you first.</p></details>
+<details><summary>Do I pay on this website?</summary><p>No. Nothing is charged on this site. You pay only after we confirm the price with you.</p></details>
+<details><summary>Why are prices shown as “indicative”?</summary><p>Hotels change rates by date and demand. The prices we show were listed on public sites, so the final price for your dates may be higher or lower.</p></details>
+<details><summary>Are taxes included?</summary><p>Not always. Taxes may be extra, and we state the full amount when we confirm your request.</p></details>
+<details><summary>What does “typical range” mean for a hostel?</summary><p>It is the usual dorm-bed range for that area and season, not a quote from that hostel.</p></details>
+<details><summary>My state is not in the stay list. What now?</summary><p>Open States, pick your state and tap Request a quote. Tell us your dates and we will suggest options.</p></details>
+</div>
+<h2 class="sec">Send us a message</h2>
+<div class="box" style="display:grid;gap:12px;max-width:520px">
+<label>Name<input id="sn" autocomplete="name"></label>
+<label>Email<input id="se" type="email" autocomplete="email"></label>
+<label>How can we help?<textarea id="sm" rows="4"></textarea></label>
+<button class="btn" id="ss">Send message</button><div class="link" id="sr" role="status"></div>
+</div>
+</section>
+</main>
+
+<div class="ov" id="ov" role="dialog" aria-modal="true" aria-labelledby="mt"><div class="sheet" id="sheet"></div></div>
+<footer><div class="wrap">© Goa Stays · <a href="#about">About us</a> · <a href="#support">Support</a> · Independent travel listings. No payments are taken on this site. Prices are indicative.</div></footer>
+
+<script>
+var CONFIG={email:"ayushmohanty5673@gmail.com",whatsapp:"9692044606",endpoint:"https://formspree.io/f/xgaajola"}; /* Fill in: your support email, WhatsApp number (digits with country code, e.g. 919876543210) and a Formspree URL to receive requests */
+var AREA="https://www.expedia.co.in/Candolim-Beach-Fort-Aguada-Candolim-Hotels.0-n6053386-0.Travel-Guide-Filter-Hotels";
+var TAJ="https://www.expedia.co.in/Candolim-Hotels-Taj-Fort-Aguada-Resort-Spa.h526340.Hotel-Information";
+var HZ="https://www.hostelz.com/en/hostels/India/Goa";
+var D=[
+{n:"Taj Fort Aguada Resort & Spa",ty:"hotel",a:"Candolim",r:9.0,lo:13000,t:["5-star","Private beach","Pool"],k:"#0f6f8b",u:TAJ},
+{n:"Taj Exotica Resort & Spa",ty:"hotel",a:"Benaulim",r:9.4,lo:17500,t:["5-star","Beachfront","Spa"],k:"#8a4f7d",u:AREA},
+{n:"Seashell Suites and Villas",ty:"hotel",a:"Aguada Fort area",lo:11480,t:["Suites","Villas"],k:"#2a8aa8",u:AREA},
+{n:"Novotel Goa Candolim",ty:"hotel",a:"Candolim",r:8.0,lo:7389,t:["Pool","Family friendly"],k:"#5b5fa3",u:AREA},
+{n:"Hyatt Place Candolim",ty:"hotel",a:"Candolim",r:9.6,lo:6854,t:["Pool","Modern rooms"],k:"#1f7a6d",u:AREA},
+{n:"DoubleTree by Hilton Goa-Panaji",ty:"hotel",a:"Panaji",r:8.8,lo:6499,t:["City base","Pool"],k:"#a3752a",u:AREA},
+{n:"Holiday Inn Goa Candolim",ty:"hotel",a:"Candolim",r:8.8,lo:6187,t:["IHG","Pool"],k:"#c0504d",u:AREA},
+{n:"BloomSuites Calangute",ty:"hotel",a:"Calangute",r:7.8,lo:5100,t:["Suites","Near beach"],k:"#d0802f",u:AREA},
+{n:"Acron Candolim Regina",ty:"hotel",a:"Candolim",r:7.6,lo:3899,t:["Budget friendly"],k:"#4f7f4a",u:AREA},
+{n:"The Acacia Hotel & Spa Goa",ty:"hotel",a:"Aguada Fort area",r:8.0,lo:3712,t:["Spa","Budget friendly"],k:"#b04a6b",u:AREA},
+{n:"goSTOPS PLUS Goa",ty:"hostel",a:"Vagator",lo:600,hi:1000,t:["Dorm bed","Social events"],k:"#e0602f",u:HZ},
+{n:"Whoopers Hostel",ty:"hostel",a:"Anjuna",r:4.8,rs:"Google",lo:900,hi:1500,t:["Dorm bed","8 min to beach"],k:"#7a4fd0",u:HZ},
+{n:"Zostel Goa",ty:"hostel",a:"Vagator",lo:350,hi:1000,tr:1,t:["Dorm bed","Pub crawls"],k:"#1c9a5a",u:HZ},
+{n:"goSTOPS Goa",ty:"hostel",a:"Calangute",lo:350,hi:1000,tr:1,t:["AC dorms","Karaoke nights"],k:"#d6458a",u:HZ}
+];
+var X="https://www.expedia.co.in/";
+D.forEach(function(h){h.c="Goa"});
+D.push(
+{n:"Zostel Hampi",ty:"hostel",c:"Karnataka",a:"Hampi (Gangavathi)",r:10,rc:2,lo:2804,fl:1,nt:"lowest nightly price · seen 16 Nov",t:["Private room","Nature views","Tours"],k:"#1c9a5a",u:X+"Gangavathi-Hotels-Zostel-Hampi.h97949985.Hotel-Information"},
+{n:"Zostel Bangalore (Koramangala)",ty:"hostel",c:"Karnataka",a:"Koramangala, Bengaluru",r:10,rc:6,lo:null,nt:"final rate on request",t:["Social hostel","Backpackers"],k:"#2f7d6d",u:X+"Bengaluru-Hotels-Zostel-Koramangala.h100611672.Hotel-Information"},
+{n:"The Hosteller Bangalore",ty:"hostel",c:"Karnataka",a:"CV Raman Nagar, Bengaluru",r:8.8,rc:6,lo:2798,fl:1,nt:"lowest nightly price · seen 17 Nov",t:["Hostel","Social spaces"],k:"#6a5acd",u:X+"Bengaluru-Hotels-The-Hosteller-Bangalore.h132006200.Hotel-Information"},
+{n:"Soloscape Backpackers Hostel",ty:"hostel",c:"Karnataka",a:"Bengaluru",r:10,rc:1,lo:379,fl:1,nt:"lowest nightly price · seen 11 Nov",t:["Budget friendly","Backpackers"],k:"#d0802f",u:X+"Bengaluru-Hotels-Soloscape.h114204466.Hotel-Information"},
+{n:"New Shahana Hostel",ty:"hostel",c:"Maharashtra",a:"Andheri East, Mumbai",r:5.8,rc:56,lo:462,fl:1,nt:"lowest nightly price · seen 12 Nov",t:["Budget friendly","Near Andheri"],k:"#c0504d",u:X+"Mumbai-Hotels-New-Shahana-Hostel.h4928439.Hotel-Information"},
+{n:"Indie Stays, BKC",ty:"hostel",c:"Maharashtra",a:"Bandra Kurla Complex, Mumbai",r:8.0,rc:97,lo:5280,fl:1,nt:"lowest nightly price · seen 29 Nov",t:["Hostel","Business district"],k:"#2a8aa8",u:X+"Mumbai-Hotels-Indie-Stays.h35706627.Hotel-Information"},
+{n:"Zostel Pune",ty:"hostel",c:"Maharashtra",a:"Viman Nagar, Pune",lo:2617,fl:1,nt:"lowest nightly price · seen 17 Nov",t:["Social hostel","Near airport"],k:"#1f7a6d",u:X+"Pune-Hotels-Zostel-Pune.h100370892.Hotel-Information"},
+{n:"Zostel Kochi",ty:"hostel",c:"Kerala",a:"Elamkulam, Kochi",r:6.0,rc:2,lo:2804,fl:1,nt:"lowest nightly price · seen 10 Nov",t:["Spacious dorms","Social hostel"],k:"#4f7f4a",u:X+"Kanayannur-Hotels-Zostel-Ernakulam.h96163406.Hotel-Information"},
+{n:"The Hosteller Jaipur",ty:"hostel",c:"Rajasthan",a:"MI Road, Jaipur",r:8.6,rc:4,lo:2275,fl:1,nt:"lowest nightly price · seen 10 Nov",t:["Hostel","Family friendly"],k:"#b04a6b",u:X+"Jaipur-District-Hotels-The-Hosteller-Jaipur.h116520660.Hotel-Information"},
+{n:"Transit POD Stay",ty:"hostel",c:"Delhi",a:"New Delhi",r:4.0,rc:2,lo:375,fl:1,nt:"lowest nightly price · seen 12 Nov",t:["Pod stay","Budget friendly"],k:"#5b5fa3",u:X+"Delhi-Hotels-Transit-POD-Stay.h124960679.Hotel-Information"},
+{n:"Moustache Goa Luxuria Hostel",ty:"hostel",c:"Goa",a:"Vagator",r:8.0,rc:1,lo:2959,fl:1,nt:"lowest nightly price · seen 31 Oct",t:["Pool","Dorms"],k:"#e0602f",u:X+"Vagator-Hotels-Moustache-Goa-Luxuria.h71656887.Hotel-Information"},
+{n:"Taj Mahal Tower, Mumbai",ty:"hotel",c:"Maharashtra",a:"Colaba, Mumbai",r:9.6,rc:1000,lo:null,nt:"final rate on request",t:["5-star","Near Gateway of India"],k:"#0f6f8b",u:"https://expedia.co.in/Mumbai-Hotels.d6050062.Travel-Guide-Hotels"},
+{n:"The Leela Mumbai",ty:"hotel",c:"Maharashtra",a:"Sahar, Mumbai",r:9.2,rc:1003,lo:null,nt:"final rate on request",t:["5-star","Spa","Near airport"],k:"#8a4f7d",u:"https://expedia.co.in/Mumbai-Hotels.d6050062.Travel-Guide-Hotels"},
+{n:"Taj Lands End",ty:"hotel",c:"Maharashtra",a:"Bandstand, Mumbai",r:9.2,rc:1010,lo:null,nt:"final rate on request",t:["5-star","Sea view"],k:"#2f6fa0",u:"https://expedia.co.in/Mumbai-Hotels.d6050062.Travel-Guide-Hotels"},
+{n:"Taj Devi Ratn Resort & Spa",ty:"hotel",c:"Rajasthan",a:"Jaipur",r:9.6,rc:81,lo:null,nt:"final rate on request",t:["5-star","Resort","Spa"],k:"#a3752a",u:"https://www.kayak.co.in/Jaipur-Hotels.8030.hotel.ksp"},
+{n:"Taj Palace, New Delhi",ty:"hotel",c:"Delhi",a:"Sardar Patel Marg, New Delhi",lo:null,nt:"final rate on request",t:["5-star","Diplomatic area"],k:"#1f6f8b"},
+{n:"The Leela Palace New Delhi",ty:"hotel",c:"Delhi",a:"Chanakyapuri, New Delhi",lo:null,nt:"final rate on request",t:["5-star","Luxury"],k:"#7a4fd0"},
+{n:"Pride Plaza Hotel Aerocity",ty:"hotel",c:"Delhi",a:"Aerocity, New Delhi",lo:null,nt:"final rate on request",t:["5-star","Near airport"],k:"#c0504d"}
+);
+var P=[
+{n:"Goa",s:"Goa",d:"Beaches, hostels and nightlife.",l:X+"Goa-Hostels.d6049928-aaHostels.Travel-Guide-Accommodation"},
+{n:"Hampi",s:"Karnataka",d:"Boulders, ruins and sunset hikes. A backpacker favourite.",l:X+"Hampi-Hotel-Resorts.d6345163-aaHotelResorts.Travel-Guide-Accommodation"},
+{n:"Gokarna",s:"Karnataka",d:"Quieter beaches than Goa, with a temple town.",l:X+"Gokarna-Hotels.d6197678.Travel-Guide-Hotels"},
+{n:"Manali",s:"Himachal Pradesh",d:"Mountain views and the Old Manali café scene.",l:X+"Manali-Hotels.d6135820.Travel-Guide-Hotels"},
+{n:"McLeod Ganj",s:"Himachal Pradesh",d:"A Himalayan hill town known for Tibetan food and trekking.",l:X+"McLeod-Ganj-Hostels.d6135824-aaHostels.Travel-Guide-Accommodation"},
+{n:"Kasol",s:"Himachal Pradesh",d:"Parvati Valley riverside with easy treks.",l:X+"Kasol-Hotels.d6224602.Travel-Guide-Hotels"},
+{n:"Spiti",s:"Himachal Pradesh",d:"A high-altitude desert valley for long road trips.",l:X+"Spiti-Hotels.d553248635939583622.Travel-Guide-Hotels"},
+{n:"Rishikesh",s:"Uttarakhand",d:"Yoga, river rafting and the Ganga ghats."},
+{n:"Mussoorie",s:"Uttarakhand",d:"A classic hill station with mountain views.",l:X+"Mussoorie-Hotels.d602452.Travel-Guide-Hotels"},
+{n:"Varkala",s:"Kerala",d:"A cliff-top beach with cafés above the sea.",l:X+"Varkala-Hotels.d6053212.Travel-Guide-Hotels"},
+{n:"Munnar",s:"Kerala",d:"Tea gardens and cool, misty hills.",l:X+"Munnar-Hotels.d6049881.Travel-Guide-Hotels"},
+{n:"Wayanad",s:"Kerala",d:"Forests, waterfalls and homestays.",l:X+"Destinations-In-Wayanad-District.d6126198.Hotel-Destinations"},
+{n:"Ooty",s:"Tamil Nadu",d:"A Nilgiri hill station surrounded by tea estates.",l:X+"Ooty-Hotels.d6234125.Travel-Guide-Hotels"},
+{n:"Udaipur",s:"Rajasthan",d:"Lakes, palaces and rooftop sunsets."},
+{n:"Gulmarg",s:"Jammu and Kashmir",d:"Green meadows in summer and skiing in winter.",l:X+"Gulmarg-Hotels.d6125181.Travel-Guide-Hotels"},
+{n:"Andaman and Nicobar Islands",s:"Islands",d:"Island beaches and scuba diving.",l:X+"Destinations-In-Andaman-And-Nicobar-Islands.d6049920.Hotel-Destinations"}
+];
+var S=[
+{n:"Uttar Pradesh",v:"646.8 million visits",d:"Varanasi, Agra, Ayodhya, Prayagraj"},
+{n:"Tamil Nadu",v:"306.8 million visits",d:"Chennai, Madurai, Ooty, Kanyakumari"},
+{n:"Karnataka",v:"304.6 million visits",d:"Bengaluru, Mysuru, Hampi, Coorg"},
+{n:"Andhra Pradesh",v:"290.3 million visits",d:"Tirupati, Visakhapatnam"},
+{n:"Rajasthan",v:"230.1 million visits",d:"Jaipur, Udaipur, Jodhpur, Jaisalmer",l:"https://www.kayak.co.in/Jaipur-Hotels.8030.hotel.ksp"},
+{n:"Maharashtra",v:"Top 10 state",d:"Mumbai, Pune, Lonavala",l:"https://expedia.co.in/Mumbai-Hotels.d6050062.Travel-Guide-Hotels"},
+{n:"West Bengal",v:"Top 10 state",d:"Kolkata, Darjeeling"},
+{n:"Gujarat",v:"Top 10 state",d:"Ahmedabad, Kutch, Dwarka"},
+{n:"Madhya Pradesh",v:"Top 10 state",d:"Bhopal, Khajuraho, Ujjain"},
+{n:"Himachal Pradesh",v:"Top 10 state",d:"Manali, Shimla, Kasol"},
+{n:"Telangana",v:"Major destination",d:"Hyderabad"},
+{n:"Delhi",v:"Major destination",d:"New Delhi, Aerocity"},
+{n:"Kerala",v:"Major destination",d:"Kochi, Munnar, Alleppey, Kovalam"},
+{n:"Jammu and Kashmir",v:"Major destination",d:"Srinagar, Gulmarg, Pahalgam"},
+{n:"Ladakh",v:"Major destination",d:"Leh"},
+{n:"Goa",v:"Stays available now",d:"Candolim, Calangute, Anjuna, Vagator, Panaji",g:1}
+];
+var $=function(i){return document.getElementById(i)};
+var inr=function(n){return "₹"+Math.round(n).toLocaleString("en-IN")};
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+var type="all";
+
+/* routing */
+var HDR={home:'<div class="hero"><div class="sun"></div><h1>Sand in your shoes. Savings in your pocket.</h1><p>Beach resorts for the family and ₹500 dorm beds for the backpacker. Pick your stay, send a request, done.</p><div class="btns"><a class="btn" href="#stays">Find a stay</a><a class="btn alt" href="#states">Explore states</a></div><svg class="wave" viewBox="0 0 1200 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 C150 0 300 70 450 36 S750 0 900 38 1100 66 1200 30 V70 H0Z"/></svg></div>',
+stays:'<div class="ph"><h1>Hotels and hostels</h1><p>Compare stays across India and send a request in a minute.</p></div>',
+places:'<div class="ph"><h1>Travel-friendly places</h1><p>Backpacker towns, hill stations and beaches, with stays for every budget.</p></div>',
+states:'<div class="ph"><h1>Explore India by state</h1><p>Major tourist states and the places travellers go.</p></div>',
+about:'<div class="ph"><h1>About us</h1><p>An independent guide to where to stay in India.</p></div>',
+support:'<div class="ph"><h1>Support</h1><p>Answers, and a way to reach us.</p></div>'};
+function route(){
+ var h=(location.hash||"#home").slice(1);if(!HDR[h])h="home";
+ ["home","stays","places","states","about","support"].forEach(function(p){$("p-"+p).hidden=p!==h});
+ $("hdr").innerHTML=HDR[h];
+ [].forEach.call($("nav").children,function(a){a.getAttribute("href")==="#"+h?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current")});
+ window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",route);
+
+/* stays */
+D.map(function(h){return h.c}).filter(function(v,i,a){return a.indexOf(v)===i}).sort().forEach(function(a){var o=document.createElement("option");o.value=o.textContent=a;$("area").appendChild(o)});
+var d0=new Date(Date.now()+86400000*3);$("cin").value=d0.toISOString().slice(0,10);$("cin").min=new Date().toISOString().slice(0,10);
+function pk(h,d){return h.lo==null?(d>0?1e9:-1):h.lo}
+function priceTxt(h){return h.lo==null?"Ask for rate":h.hi?inr(h.lo)+" to "+inr(h.hi):inr(h.lo)}
+function est(h){var n=+$("nights").value,p=+$("pax").value;if(h.lo==null)return null;return h.fl?h.lo*n:h.ty==="hotel"?h.lo*n*Math.ceil(p/2):h.lo*n*p}
+function render(){
+ var a=$("area").value,m=+$("max").value,s=$("sort").value;
+ $("maxv").textContent=m>=25000?"any":inr(m);
+ var L=D.filter(function(h){return(type==="all"||h.ty===type)&&(!a||h.c===a)&&(m>=25000||(h.lo!=null&&h.lo<=m))});
+ L.sort(function(x,y){return s==="low"?pk(x,1)-pk(y,1):s==="high"?pk(y,-1)-pk(x,-1):((y.rs?y.r*2:y.r)||0)-((x.rs?x.r*2:x.r)||0)});
+ $("count").textContent=L.length+(L.length===1?" stay":" stays")+" in India";
+ if(!L.length){$("list").innerHTML='<div class="empty">No stays match. Raise your budget or choose another area.</div>';return}
+ $("list").innerHTML=L.map(function(h){var i=D.indexOf(h);
+  return '<article class="card"><div class="pic" style="background:'+h.k+'"><b>'+(h.ty==="hotel"?"Hotel":"Hostel")+'</b>'+h.n.charAt(0)+'</div>'+
+  '<div class="info"><h3>'+h.n+'</h3><div class="meta">'+h.a+', '+h.c+(h.r?' · <span class="rate">'+h.r+(h.rs?'/5 on '+h.rs:'/10')+'</span>'+(h.rc?' ('+h.rc+' reviews)':''):'')+'</div><div class="tags">'+h.t.map(function(x){return '<span>'+x+'</span>'}).join("")+'</div></div>'+
+  '<div class="buy"><div class="price">'+priceTxt(h)+'<small>'+(h.nt||(h.ty==="hotel"?"per night":"per bed, per night"))+(h.tr?' · typical range':'')+'</small></div><button class="btn" data-i="'+i+'">Request booking</button></div></article>';
+ }).join("");
+}
+$("seg").addEventListener("click",function(e){var b=e.target.closest("button");if(!b)return;type=b.dataset.t;[].forEach.call($("seg").children,function(x){x.setAttribute("aria-pressed",x===b)});render()});
+["area","max","nights","pax","sort","cin"].forEach(function(i){$(i).addEventListener("input",render)});
+$("list").addEventListener("click",function(e){var b=e.target.closest("button[data-i]");if(!b)return;var h=D[+b.dataset.i],n=+$("nights").value,p=+$("pax").value;
+ openSheet("Request: "+h.n,esc($("cin").value)+" · "+n+(n===1?" night":" nights")+" · "+p+(p===1?" traveller":" travellers")+(est(h)==null?"<br>Final price on request. We quote it after checking availability.":"<br>Estimated total: <b>"+inr(est(h))+"</b><br><span class='link'>Indicative, before taxes. We confirm the final price first.</span>"),{stay:h.n,city:h.c,checkin:$("cin").value,nights:n,travellers:p,estimate:est(h)},h.u)});
+
+/* states + home stats */
+$("sgrid").innerHTML=S.map(function(s,i){return '<div class="box st"><h3>'+s.n+'</h3><div class="v">'+s.v+'</div><div class="d">'+s.d+'</div>'+
+ (s.g?'<a class="btn" href="#stays">See Goa stays</a>':'<button class="btn" data-s="'+i+'">Request a quote</button>')+(s.l?'<a class="link" href="'+s.l+'" target="_blank" rel="noopener noreferrer">Compare live prices</a>':'')+'</div>'}).join("");
+$("sgrid").addEventListener("click",function(e){var b=e.target.closest("button[data-s]");if(!b)return;var s=S[+b.dataset.s];
+ openSheet("Quote for "+s.n,"Tell us where and when you want to stay in "+esc(s.n)+" ("+esc(s.d)+"). We will reply with options and prices.",{state:s.n},null,true)});
+$("stats").innerHTML='<div class="stat"><b>'+D.length+'</b><span>hotels and hostels listed</span></div><div class="stat"><b>'+S.length+'</b><span>states and regions</span></div><div class="stat"><b>'+P.length+'</b><span>travel-friendly places</span></div><div class="stat"><b>₹'+Math.min.apply(null,D.filter(function(h){return h.lo!=null&&!h.tr}).map(function(h){return h.lo})).toLocaleString("en-IN")+'</b><span>lowest nightly price listed</span></div>';
+
+/* places */
+$("pgrid").innerHTML=P.map(function(p,i){return '<div class="box st"><h3>'+p.n+'</h3><div class="v">'+p.s+'</div><div class="d">'+p.d+'</div><button class="btn" data-p="'+i+'">Ask about stays</button>'+(p.l?'<a class="link" href="'+p.l+'" target="_blank" rel="noopener noreferrer">See live stays and prices</a>':'')+'</div>'}).join("");
+$("pgrid").addEventListener("click",function(e){var b=e.target.closest("button[data-p]");if(!b)return;var p=P[+b.dataset.p];openSheet("Stays in "+p.n,"Tell us your dates and budget for "+esc(p.n)+", "+esc(p.s)+". We will reply with options and prices.",{place:p.n},p.l||null,true)});
+
+/* request sheet */
+function close(){$("ov").classList.remove("on")}
+function send(data){if(CONFIG.endpoint){try{fetch(CONFIG.endpoint,{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(data)})}catch(x){}}}
+function openSheet(title,summary,payload,link,notes){
+ $("sheet").innerHTML='<h2 id="mt">'+esc(title)+'</h2><div class="sum">'+summary+'</div>'+
+ (notes?'<label>Dates and details<textarea id="nt" rows="3" placeholder="Check-in date, nights, travellers, budget"></textarea></label>':'')+
+ '<label>Full name<input id="nm" autocomplete="name"></label><label>Phone or WhatsApp<input id="ph" type="tel" autocomplete="tel"></label><label>Email<input id="em" type="email" autocomplete="email"></label>'+
+ (link?'<a class="link" href="'+link+'" target="_blank" rel="noopener noreferrer">Compare the live price on a partner site</a>':'')+
+ '<div class="row"><button class="btn alt" id="cx" style="color:var(--ink)">Cancel</button><button class="btn" id="ok">Send request</button></div>';
+ $("ov").classList.add("on");$("nm").focus();$("cx").onclick=close;
+ $("ok").onclick=function(){
+  var nm=$("nm").value.trim(),ph=$("ph").value.trim(),em=$("em").value.trim();
+  if(!nm||ph.replace(/\D/g,"").length<8||!/^\S+@\S+\.\S+$/.test(em)){alert("Enter your name, a phone number and a valid email.");return}
+  var ref="GS"+Math.random().toString(36).slice(2,8).toUpperCase();
+  payload.ref=ref;payload.name=nm;payload.phone=ph;payload.email=em;if(notes)payload.details=$("nt").value;send(payload);
+  $("sheet").innerHTML='<h2 id="mt">Request sent</h2><div class="ref">'+ref+'</div><p style="margin:0">Thanks, '+esc(nm)+'. We will check availability and contact you on '+esc(ph)+' to confirm the final price. Keep this code for any follow-up.</p>'+(CONFIG.endpoint?'':'<p class="link" style="margin:0">Demo mode: this copy does not deliver requests yet.</p>')+'<button class="btn" id="dn">Done</button>';
+  $("dn").onclick=close;$("dn").focus();
+ };
+}
+$("ov").addEventListener("click",function(e){if(e.target===$("ov"))close()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")close()});
+
+/* support */
+var c=[];if(CONFIG.email)c.push('Email: <a href="mailto:'+esc(CONFIG.email)+'">'+esc(CONFIG.email)+'</a>');
+if(CONFIG.whatsapp)c.push('WhatsApp: <a href="https://wa.me/'+esc(CONFIG.whatsapp.replace(/\D/g,""))+'" target="_blank" rel="noopener noreferrer">message us</a>');
+if(c.length)$("contact").innerHTML=c.join("<br>")+"<br>Or use the form below.";
+$("ss").onclick=function(){
+ var n=$("sn").value.trim(),e=$("se").value.trim(),m=$("sm").value.trim();
+ if(!n||!/^\S+@\S+\.\S+$/.test(e)||!m){$("sr").textContent="Enter your name, a valid email and your message.";return}
+ send({support:true,name:n,email:e,message:m});
+ $("sr").textContent=CONFIG.endpoint?"Message sent. We will reply by email.":"Demo mode: this copy does not deliver messages yet.";
+ $("sn").value=$("se").value=$("sm").value="";
+};
+route();render();
+</script>
+</body>
+</html>
